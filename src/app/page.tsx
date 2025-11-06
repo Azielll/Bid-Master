@@ -4,7 +4,7 @@ import React from 'react'
 import { Model, Item } from '../model'
 
 import styles from "./page.module.css"
-import { ToAuctionItems } from './boundary'
+import { ToAuctionItems, TotalFundsRaisedCard, SetupAuctionCard, SoldItemsCard, CurrentItemCard } from './boundary'
 
 // BOUNDARY OBJECT
 export default function Home() {
@@ -25,12 +25,13 @@ export default function Home() {
        /** When this renders, it will show the number of items to auction. BUT if ToAuctionItems changes, 
         * it will not update IF ToAuctionItems DOESN'T call 'andRefreshDisplay()' to force US to refresh. */
        }
-       <h1>Items to auction ({model.itemsToAuction.length})</h1>
+       <TotalFundsRaisedCard model={model} redraw={redraw}/>
+       <SetupAuctionCard model={model} andRefreshDisplay={andRefreshDisplay} />
         <ToAuctionItems model={model} andRefreshDisplay={andRefreshDisplay} />
        
-       <h1>Current Item</h1>
+       <CurrentItemCard model={model} redraw={redraw} andRefreshDisplay={andRefreshDisplay} />
 
-       <h1>Items that have auctioned</h1>
+       <SoldItemsCard model={model} redraw={redraw} />
       </main>
     </div>
   );
