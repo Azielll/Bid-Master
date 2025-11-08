@@ -20,18 +20,28 @@ export default function Home() {
   return (
     <div className={styles.page}>
       <main className={styles.main}>
-      
-       {
-       /** When this renders, it will show the number of items to auction. BUT if ToAuctionItems changes, 
-        * it will not update IF ToAuctionItems DOESN'T call 'andRefreshDisplay()' to force US to refresh. */
-       }
-       <TotalFundsRaisedCard model={model} redraw={redraw}/>
-       <SetupAuctionCard model={model} andRefreshDisplay={andRefreshDisplay} />
-        <ToAuctionItems model={model} andRefreshDisplay={andRefreshDisplay} />
-       
-       <CurrentItemCard model={model} redraw={redraw} andRefreshDisplay={andRefreshDisplay} />
+        <header className={styles.header}>
+          <h1 className={styles.title}>BidMaster</h1>
+          <p className={styles.subtitle}>Manage your auction items and track bids</p>
+        </header>
 
-       <SoldItemsCard model={model} redraw={redraw} />
+        <div className={styles.content}>
+          <div className={styles.topSection}>
+            <TotalFundsRaisedCard model={model} redraw={redraw}/>
+            <SetupAuctionCard model={model} andRefreshDisplay={andRefreshDisplay} />
+          </div>
+
+          <div className={styles.mainSection}>
+            <div className={styles.leftColumn}>
+              <ToAuctionItems model={model} redraw={redraw} andRefreshDisplay={andRefreshDisplay} />
+              <SoldItemsCard model={model} redraw={redraw} />
+            </div>
+
+            <div className={styles.rightColumn}>
+              <CurrentItemCard model={model} redraw={redraw} andRefreshDisplay={andRefreshDisplay} />
+            </div>
+          </div>
+        </div>
       </main>
     </div>
   );

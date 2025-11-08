@@ -1,0 +1,541 @@
+/* Card Container */
+.card {
+  background: white;
+  border-radius: 12px;
+  padding: 24px;
+  margin-bottom: 24px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e5e7eb;
+  width: 100%;
+}
+
+.card h2 {
+  margin: 0 0 16px 0;
+  font-size: 24px;
+  font-weight: 600;
+  color: #111827;
+  border-bottom: 2px solid #3b82f6;
+  padding-bottom: 8px;
+}
+
+/* Total Funds Raised Card */
+.totalFunds {
+  background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+  color: white;
+}
+
+.totalFunds h2 {
+  color: white;
+  border-bottom-color: rgba(255, 255, 255, 0.3);
+}
+
+.totalFundsAmount {
+  font-size: 36px;
+  font-weight: 700;
+  margin: 16px 0;
+  text-align: center;
+}
+
+/* Setup Auction Card */
+.setupCard {
+  background: #f9fafb;
+  border: 2px dashed #d1d5db;
+}
+
+.setupCard button {
+  width: 100%;
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: 600;
+  background: #3b82f6;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s;
+  margin-top: 12px;
+}
+
+.setupCard button:hover:not(:disabled) {
+  background: #2563eb;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.4);
+}
+
+.setupCard button:disabled {
+  background: #9ca3af;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+/* Items to Auction */
+.formGroup {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.formRow {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.formRow label {
+  font-weight: 600;
+  color: #374151;
+  font-size: 14px;
+}
+
+.formRow input {
+  padding: 10px 12px;
+  border: 2px solid #e5e7eb;
+  border-radius: 8px;
+  font-size: 14px;
+  transition: all 0.2s;
+}
+
+.formRow input:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.addButton {
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: 600;
+  background: #10b981;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s;
+  width: 100%;
+}
+
+.addButton:hover {
+  background: #059669;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.4);
+}
+
+.itemsList {
+  list-style: none;
+  padding: 0;
+  margin: 16px 0 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.itemCard {
+  background: #f9fafb;
+  padding: 16px;
+  border-radius: 8px;
+  border-left: 4px solid #3b82f6;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.itemInfo {
+  flex: 1;
+}
+
+.itemName {
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 4px;
+}
+
+.itemDescription {
+  color: #6b7280;
+  font-size: 14px;
+  margin-bottom: 4px;
+}
+
+.itemPrice {
+  color: #059669;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+/* Current Item Card */
+.currentItemCard {
+  background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+  border: 2px solid #fbbf24;
+}
+
+.currentItemCard h2 {
+  color: #92400e;
+  border-bottom-color: #f59e0b;
+}
+
+.itemDetails {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  margin: 16px 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.itemTitle {
+  font-size: 28px;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 8px;
+}
+
+.itemDesc {
+  color: #6b7280;
+  font-size: 16px;
+  margin-bottom: 16px;
+}
+
+.priceInfo {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.priceLabel {
+  font-size: 14px;
+  color: #6b7280;
+  margin-bottom: 4px;
+}
+
+.priceValue {
+  font-size: 24px;
+  font-weight: 700;
+  color: #059669;
+}
+
+.biddingForm {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  margin: 16px 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr auto;
+  gap: 12px;
+  align-items: end;
+}
+
+.bidsSection {
+  margin-top: 20px;
+}
+
+.bidsCount {
+  font-weight: 600;
+  color: #6b7280;
+  margin-bottom: 12px;
+}
+
+.bidsList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.bidItem {
+  background: #f9fafb;
+  padding: 12px 16px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-left: 4px solid #e5e7eb;
+}
+
+.bidItem.highest {
+  background: #ecfdf5;
+  border-left-color: #10b981;
+}
+
+.bidInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.bidderName {
+  font-weight: 600;
+  color: #111827;
+}
+
+.bidTime {
+  font-size: 12px;
+  color: #6b7280;
+}
+
+.bidAmount {
+  font-size: 18px;
+  font-weight: 700;
+  color: #059669;
+}
+
+.highestBadge {
+  background: #10b981;
+  color: white;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 600;
+  margin-right: 8px;
+}
+
+.primaryButton {
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: 600;
+  background: #3b82f6;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.primaryButton:hover:not(:disabled) {
+  background: #2563eb;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.4);
+}
+
+.primaryButton:disabled {
+  background: #9ca3af;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.sellButton {
+  padding: 14px 28px;
+  font-size: 18px;
+  font-weight: 700;
+  background: #ef4444;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.sellButton:hover:not(:disabled) {
+  background: #dc2626;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(239, 68, 68, 0.4);
+}
+
+.sellButton:disabled {
+  background: #9ca3af;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+/* Sold Items Card */
+.soldItemsList {
+  list-style: none;
+  padding: 0;
+  margin: 16px 0 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.soldItemCard {
+  background: #f9fafb;
+  padding: 16px;
+  border-radius: 8px;
+  border-left: 4px solid #10b981;
+}
+
+.soldItemHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.soldItemName {
+  font-weight: 600;
+  color: #111827;
+  font-size: 18px;
+}
+
+.soldItemDesc {
+  color: #6b7280;
+  font-size: 14px;
+  margin-bottom: 12px;
+}
+
+.soldItemDetails {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.soldItemDetail {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.soldItemDetailLabel {
+  font-size: 12px;
+  color: #6b7280;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.soldItemDetailValue {
+  font-weight: 600;
+  color: #111827;
+}
+
+.soldItemDetailValue.winner {
+  color: #3b82f6;
+}
+
+.soldItemDetailValue.price {
+  color: #059669;
+  font-size: 18px;
+}
+
+.noItems {
+  text-align: center;
+  color: #9ca3af;
+  padding: 40px 20px;
+  font-style: italic;
+}
+
+.noBids {
+  text-align: center;
+  color: #9ca3af;
+  padding: 20px;
+  font-style: italic;
+}
+
+.errorMessage {
+  text-align: center;
+  color: #ef4444;
+  margin-top: 8px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .card {
+    padding: 16px;
+  }
+
+  .biddingForm {
+    grid-template-columns: 1fr;
+  }
+
+  .priceInfo {
+    grid-template-columns: 1fr;
+  }
+
+  .soldItemDetails {
+    grid-template-columns: 1fr;
+  }
+
+  .itemCard {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .card {
+    background: #1f2937;
+    border-color: #374151;
+    color: #f9fafb;
+  }
+
+  .card h2 {
+    color: #f9fafb;
+  }
+
+  .formRow input {
+    background: #374151;
+    border-color: #4b5563;
+    color: #f9fafb;
+  }
+
+  .itemCard {
+    background: #374151;
+  }
+
+  .itemName {
+    color: #f9fafb;
+  }
+
+  .itemDescription {
+    color: #9ca3af;
+  }
+
+  .itemDetails {
+    background: #374151;
+  }
+
+  .itemTitle {
+    color: #f9fafb;
+  }
+
+  .itemDesc {
+    color: #d1d5db;
+  }
+
+  .biddingForm {
+    background: #374151;
+  }
+
+  .bidItem {
+    background: #374151;
+    border-left-color: #4b5563;
+  }
+
+  .bidItem.highest {
+    background: #064e3b;
+    border-left-color: #10b981;
+  }
+
+  .bidderName {
+    color: #f9fafb;
+  }
+
+  .bidTime {
+    color: #9ca3af;
+  }
+
+  .soldItemCard {
+    background: #374151;
+  }
+
+  .soldItemName {
+    color: #f9fafb;
+  }
+
+  .soldItemDesc {
+    color: #9ca3af;
+  }
+
+  .soldItemDetailValue {
+    color: #f9fafb;
+  }
+}
+
