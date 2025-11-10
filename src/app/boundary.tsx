@@ -46,15 +46,15 @@ function ToAuctionItems({model, redraw, andRefreshDisplay}: {model: Model, redra
             <div className={styles.formGroup}>
               <div className={styles.formRow}>
                 <label htmlFor="new-item-name">Name</label>
-                <input id="new-item-name" placeholder="Item name" />
+                <input id="new-item-name" data-testid="new-item-name" placeholder="Item name" />
               </div>
               <div className={styles.formRow}>
                 <label htmlFor="new-item-description">Description</label>
-                <input id="new-item-description" placeholder="Item description" />
+                <input id="new-item-description" data-testid="new-item-description" placeholder="Item description" />
               </div>
               <div className={styles.formRow}>
                 <label htmlFor="new-item-initial-price">Initial Price ($)</label>
-                <input id="new-item-initial-price" type="number" step="0.01" placeholder="Item initial price" />
+                <input id="new-item-initial-price" data-testid="new-item-initial-price" type="number" step="0.01" placeholder="Item initial price" />
               </div>
               <button className={styles.addButton} onClick={() => {addItem()}}>Add Item</button>
             </div>
@@ -106,6 +106,7 @@ function SetupAuctionCard({model, andRefreshDisplay}: {model: Model, andRefreshD
             <h2>Setup Auction</h2>
             <p>Add items to the Auction before starting</p>
             <button 
+              data-testid="start-auction-button"
               onClick={handleStartAuction}
               disabled={model.isAuctionStarted || model.itemsToAuction.length === 0}
             >
@@ -252,18 +253,19 @@ function CurrentItemCard({model, redraw, andRefreshDisplay}: {model: Model, redr
       <div className={styles.biddingForm}>
         <div className={styles.formRow}>
           <label htmlFor="new-bidder-name">Bidder Name</label>
-          <input id="new-bidder-name" placeholder="Enter your name" />
+          <input id="new-bidder-name" data-testid="new-bidder-name" placeholder="Enter your name" />
         </div>
         <div className={styles.formRow}>
           <label htmlFor="new-bid-amount">Bid Amount ($)</label>
           <input 
             id="new-bid-amount" 
+            data-testid="new-bid-amount"
             type="number" 
             step="0.01"
             placeholder={`Min: $${getMinimumNextBid().toFixed(2)}`} 
           />
         </div>
-        <button className={styles.primaryButton} onClick={handlePlaceBid}>Place Bid</button>
+        <button className={styles.primaryButton} data-testid="place-bid-button" onClick={handlePlaceBid}>Place Bid</button>
       </div>
 
       {/* Current Bids List */}
@@ -292,6 +294,7 @@ function CurrentItemCard({model, redraw, andRefreshDisplay}: {model: Model, redr
       {/* Sell Button */}
       <button 
         className={styles.sellButton}
+        data-testid="sell-item-button"
         onClick={handleSellItem}
         disabled={!model.isAuctionStarted || currentBids.length === 0}
       >
